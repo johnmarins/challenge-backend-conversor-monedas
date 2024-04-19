@@ -21,45 +21,31 @@ public class PrincipalConversorMonedas {
                 ***************************************
                 """;
 
-        String ayuda = """
-                            Puede convertir cualquier moneda del mundo.
-                            Algunos ejemplos:
-                            ----------------------------------------------------------------
-                            | País                        | Divisa                | Código |
-                            ----------------------------------------------------------------
-                            | ESTADOS UNIDOS DE AMÉRICA   | Dólar estadounidense  |  USD   |
-                            ----------------------------------------------------------------
-                            | UNIÓN EUROPEA               | Euro                  |  EUR   |
-                            ----------------------------------------------------------------
-                            | COLOMBIA                    | Peso colombiano       |  COP   |
-                            ----------------------------------------------------------------
-                            """;
+        ConversorMonedas cm = new ConversorMonedas();
+        APIExchange consulta = new APIExchange();
 
         System.out.println("***************************************");
         System.out.println("Bienvenid@ al Conversor de Monedas");
         System.out.println("***************************************");
-        System.out.println("\n>>> Ingrese los códigos de las monedas que desea cambiar.");
-        System.out.println(ayuda);
-        Scanner sc = new Scanner(System.in);
-        System.out.println("--> Primero ingrese la moneda para tomar como base: ");
-        String monedaBase = sc.nextLine().toUpperCase();
-        System.out.println("--> Ahora ingrese la segunda moneda (a la que desea cambiar): ");
-        String monedaCambio = sc.nextLine().toUpperCase();
 
-        ConversorMonedas cm = new ConversorMonedas();
-        APIExchange consulta = new APIExchange();
+        String[] monedas = cm.setUp();
+        String monedaBase = monedas[0];
+        String monedaCambio = monedas[1];
+
         TasaDeCambio tc = consulta.buscaTasaCambio(monedaBase);
         Map<String, Double> mapTasaDeCambio = (Map<String, Double>) tc.conversion_rates();
         Double tasaCambio = mapTasaDeCambio.get(monedaCambio);
 
         cm.cambiarMoneda(monedaBase, monedaCambio, tasaCambio);
 
+
         while (opcion != 9){
             System.out.println("***************************************");
             System.out.format("Cambiar de %s a %s", monedaBase, monedaCambio);
             System.out.println("\n" + opciones);
 
-            opcion = sc.nextInt();
+            Scanner opt = new Scanner(System.in);
+            opcion = opt.nextInt();
 
             if (opcion > 2 && opcion < 9) {
                 System.out.println("Esta opción no se encuentra disponible");
@@ -73,11 +59,9 @@ public class PrincipalConversorMonedas {
                     break;
 
                 case 2:
-                    System.out.println("--> Primero ingrese la moneda para tomar como base: ");
-                    Scanner scNuevaMoneda = new Scanner(System.in);
-                    monedaBase = scNuevaMoneda.nextLine().toUpperCase();
-                    System.out.println("--> Ahora ingrese la segunda moneda (a la que desea cambiar): ");
-                    monedaCambio = scNuevaMoneda.nextLine().toUpperCase();
+                    monedas = cm.setUp();
+                    monedaBase = monedas[0];
+                    monedaCambio = monedas[1];
                     tc = consulta.buscaTasaCambio(monedaBase);
                     mapTasaDeCambio = (Map<String, Double>) tc.conversion_rates();
                     tasaCambio = mapTasaDeCambio.get(monedaCambio);

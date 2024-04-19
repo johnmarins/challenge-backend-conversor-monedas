@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1449e481-0a3b-4f57-94f8-861579265465" name="Changes" comment="">
+    <list default="true" id="1449e481-0a3b-4f57-94f8-861579265465" name="Changes" comment="Ajuste cálculo y opciones">
+      <change afterPath="$PROJECT_DIR$/src/Prueba.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PrincipalConversorMonedas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrincipalConversorMonedas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jems/challenge/calculos/ConversorMonedas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jems/challenge/calculos/ConversorMonedas.java" afterDir="false" />
@@ -17,9 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="Record" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -55,15 +56,17 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.PrincipalConversorMonedas.executor": "Run",
+    "Application.Prueba.executor": "Run",
     "Application.Pruebas.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "constructor",
+    "git-widget-placeholder": "catcherrors",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/jmari/Downloads/gson-2.10.1.jar",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.editor"
   }
 }]]></component>
