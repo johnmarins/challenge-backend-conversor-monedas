@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1449e481-0a3b-4f57-94f8-861579265465" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PrincipalConversorMonedas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jems/challenge/api/APIExchange.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jems/challenge/api/TasaDeCambio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jems/challenge/calculos/ConversorMonedas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jems/challenge/utilidades/FormatearMoneda.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jems/challenge/utilidades/Sleep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/challenge-backend-conversor-monedas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/challenge-backend-conversor-monedas.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrincipalConversorMonedas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrincipalConversorMonedas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jems/challenge/calculos/ConversorMonedas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jems/challenge/calculos/ConversorMonedas.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -59,7 +58,7 @@
     "Application.Pruebas.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "constructor",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/jmari/Downloads/gson-2.10.1.jar",
     "project.structure.last.edited": "Modules",
