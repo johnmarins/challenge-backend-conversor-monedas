@@ -1,11 +1,12 @@
 package com.jems.challenge.calculos;
 
-import java.util.InputMismatchException;
+import java.util.Map;
 import java.util.Scanner;
 
 import static com.jems.challenge.utilidades.FormatearMoneda.formatearMoneda;
 
 public class ConversorMonedas {
+
 
     public String[] setUp() {
 
@@ -27,7 +28,7 @@ public class ConversorMonedas {
         System.out.println(ayuda);
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("--> Primero ingrese la moneda para tomar como base: ");
+        System.out.println("--> Primero ingrese la moneda de la que desea cambiar: ");
 
         String monedaBase;
 
