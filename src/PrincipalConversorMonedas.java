@@ -1,10 +1,13 @@
 import com.jems.challenge.api.APIExchange;
 import com.jems.challenge.api.TasaDeCambio;
 import com.jems.challenge.calculos.ConversorMonedas;
+import com.jems.challenge.calculos.Divisas;
 import com.jems.challenge.utilidades.Sleep;
 
 import java.util.Map;
 import java.util.Scanner;
+
+import static com.jems.challenge.utilidades.ConsultaMonedas.consultaMonedas;
 
 public class PrincipalConversorMonedas {
     public static void main(String[] args) {
@@ -40,8 +43,14 @@ public class PrincipalConversorMonedas {
 
 
         while (opcion != 9){
+            Divisas divisaBase = (Divisas) consultaMonedas().get(monedaBase);
+            Divisas divisaCambio = (Divisas) consultaMonedas().get(monedaCambio);
             System.out.println("***************************************");
-            System.out.format("Cambiar de %s a %s", monedaBase, monedaCambio);
+            System.out.format("""
+                    Cambiar de %s - %s
+                    a %s - %s""",
+                    monedaBase, divisaBase.divisa(), monedaCambio, divisaCambio.divisa());
+
             System.out.println("\n" + opciones);
 
             Scanner opt = new Scanner(System.in);
