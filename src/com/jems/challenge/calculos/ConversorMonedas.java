@@ -1,8 +1,9 @@
 package com.jems.challenge.calculos;
 
-import java.util.Map;
+import java.util.HashMap;
 import java.util.Scanner;
 
+import static com.jems.challenge.utilidades.ConsultaMonedas.consultaMonedas;
 import static com.jems.challenge.utilidades.FormatearMoneda.formatearMoneda;
 
 public class ConversorMonedas {
@@ -13,15 +14,12 @@ public class ConversorMonedas {
         String ayuda = """
                 El conversor soporta cualquier moneda del mundo.
                 Algunos ejemplos:
-                ----------------------------------------------------------------
-                | País                        | Divisa                | Código |
-                ----------------------------------------------------------------
-                | ESTADOS UNIDOS DE AMÉRICA   | Dólar estadounidense  |  USD   |
-                ----------------------------------------------------------------
-                | UNIÓN EUROPEA               | Euro                  |  EUR   |
-                ----------------------------------------------------------------
-                | COLOMBIA                    | Peso colombiano       |  COP   |
-                ----------------------------------------------------------------
+                
+                Código : USD  País : USA          Divisa : DOLAR ESTADOUNIDENSE
+                Código : GBP  País : REINO UNIDO  Divisa : LIBRA ESTERLINA
+                Código : COP  País : COLOMBIA     Divisa : PESO COLOMBIANO
+                Código : ARS  País : ARGENTINA    Divisa : PESO ARGENTINO
+                Código : BRL  País : BRASIL       Divisa : REAL BRASILEÑO
                 """;
 
         System.out.println("\n>>> Ingrese los códigos de las monedas que desea cambiar.");
@@ -31,13 +29,16 @@ public class ConversorMonedas {
         System.out.println("--> Primero ingrese la moneda de la que desea cambiar: ");
 
         String monedaBase;
+        HashMap consultaDivisas = consultaMonedas();
 
         while (true) {
             monedaBase = sc.nextLine().toUpperCase();
-            if (monedaBase.matches("[a-zA-Z]{3}")) {
+            if (monedaBase.matches("[a-zA-Z]{3}") && consultaDivisas.containsKey(monedaBase)) {
                 break;
-            } else {
+            } else if (!monedaBase.matches("[a-zA-Z]{3}")) {
                 System.out.print("El código de moneda debe tener 3 letras, intente nuevamente: ");
+            } else {
+                System.out.println("No es una moneda disponible para consultar, intente nuevamente: ");
             }
         }
 
@@ -46,10 +47,12 @@ public class ConversorMonedas {
 
         while (true) {
             monedaCambio = sc.nextLine().toUpperCase();
-            if (monedaCambio.matches("[a-zA-Z]{3}")) {
+            if (monedaCambio.matches("[a-zA-Z]{3}") && consultaDivisas.containsKey(monedaCambio)) {
                 break;
-            } else {
+            } else if (!monedaCambio.matches("[a-zA-Z]{3}")) {
                 System.out.print("El código de moneda debe tener 3 letras, intente nuevamente: ");
+            } else {
+                System.out.println("No es una moneda disponible para consultar, intente nuevamente: ");
             }
         }
 

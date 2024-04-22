@@ -10,21 +10,21 @@ import java.util.Map;
 public interface ConsultaMonedas {
 
     static HashMap consultaMonedas() {
-        Map<String, Divisas> miHashMap = null;
+        Map<String, Divisas> divisasMap = null;
 
         try {
             FileReader fileReader = new FileReader("divisas.json");
             Gson gson = new Gson();
             Divisas[] divisas = gson.fromJson(fileReader, Divisas[].class);
 
-            miHashMap = new HashMap<>();
+            divisasMap = new HashMap<>();
             for (Divisas objeto : divisas) {
-                miHashMap.put(objeto.codigo(), objeto);
+                divisasMap.put(objeto.codigo(), objeto);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return (HashMap) miHashMap;
+        return (HashMap) divisasMap;
     }
 }
